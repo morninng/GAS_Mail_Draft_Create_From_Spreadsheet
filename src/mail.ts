@@ -58,7 +58,7 @@ export class Mail {
 
 
   createMailContent( first_name, last_name ){
-    return ` ${first_name} ${last_name}
+    return `Hello ${first_name} ${last_name}
 
 We are sending emails to people who participated in the Korea Japan Online School Debate Championship.
 
