@@ -48,43 +48,33 @@ export class Mail {
 
 
 
-  createMailDraft(userEmail, shoolName, userName) {
+  createMailDraft(userEmail,first_name, last_name) {
 
-    const content = this.createMailContent(shoolName, userName)
-    const title = "route H　英語ディベート大会のご案内（2/19：経験者 2/20: 初心者）"
+    const content = this.createMailContent(first_name, last_name)
+    const title = "Route H debate tournament invitation February 19th"
 
     this.createMailDraftExecute(userEmail, title, content )
   }
 
 
-  createMailContent(shoolName, userName ){
-    return `${shoolName} ${userName}様
+  createMailContent( first_name, last_name ){
+    return ` ${first_name} ${last_name}
 
-２０２２年２月にも再度、英語ディベート大会を開催させていただくので
-ご連絡させていただきました。
+    We are sending emails to people who participated in the Korea Japan Online School Debate Championship.
 
-＜概要＞
-  ２月１９日（土）：経験者向けの大会
-  ２月２０日（日）：初心者向けの大会
+    I am now hosting a Japanese online debate tournament for junior and high school students, and I want to invite Korean debaters for this tournament.
+    
+    Date: February 19th 
+    
+    Tournament Detail
+    https://docs.google.com/document/d/1Ue0Vfd4Dlszq9SBxUapiQfXed0nwXNtchLrZJIuGyaY/edit
+    
+    registration
+    https://docs.google.com/forms/d/e/1FAIpQLScnhMJzPFbVGR2TBd4orCfr8JfkIv5eH0udpSd4puG8rkWANg/viewform
+    
+    Best Regards Yuuta Moriyama
 
-
-＜要綱＞
-https://docs.google.com/document/d/1oVPxgseEbCy2j9FvliXoAQCiuojARgXgJ78vUP9RvGI/edit?usp=sharing
-
-
-＜特徴＞
-  できるだけたくさんの人が参加できるように工夫しました。
-  - 提供ジャッジ不要
-  - 部員が少ない中高一貫校の場合：中学生と高校生で組んでの参加も可能です。
-  - 部員が多い学校の場合：何チームでも参加可能です。全員でご参加ください。ビギナーは初心者大会、連盟杯に出場する人は、経験者ラウンドにご参加ください
-  - 部員が本当に少ない場合：個人での参加でも大丈夫です。こちらで他の個人参加のひとと組み合わせます。
-  - ルールがわかっていない人の場合：事前練習会を週に二回開いているので、学んでからの参加が可能です。
-
-たくさんのご参加をお待ちしております。
-
-何卒よろしくお願いいたします
-
-Route H 英語ディベート大会運営者一同`
+`
 
   }
   
