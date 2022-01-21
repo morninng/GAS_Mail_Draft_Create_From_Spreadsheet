@@ -60,19 +60,19 @@ export class Mail {
   createMailContent( first_name, last_name ){
     return ` ${first_name} ${last_name}
 
-    We are sending emails to people who participated in the Korea Japan Online School Debate Championship.
+We are sending emails to people who participated in the Korea Japan Online School Debate Championship.
 
-    I am now hosting a Japanese online debate tournament for junior and high school students, and I want to invite Korean debaters for this tournament.
+I am now hosting a Japanese online debate tournament for junior and high school students, and I want to invite Korean debaters for this tournament.
     
-    Date: February 19th 
+Date: February 19th 
     
-    Tournament Detail
-    https://docs.google.com/document/d/1Ue0Vfd4Dlszq9SBxUapiQfXed0nwXNtchLrZJIuGyaY/edit
+Tournament Detail
+https://docs.google.com/document/d/1Ue0Vfd4Dlszq9SBxUapiQfXed0nwXNtchLrZJIuGyaY/edit
     
-    registration
-    https://docs.google.com/forms/d/e/1FAIpQLScnhMJzPFbVGR2TBd4orCfr8JfkIv5eH0udpSd4puG8rkWANg/viewform
+Registration
+https://docs.google.com/forms/d/e/1FAIpQLScnhMJzPFbVGR2TBd4orCfr8JfkIv5eH0udpSd4puG8rkWANg/viewform
     
-    Best Regards Yuuta Moriyama
+Best Regards Yuuta Moriyama
 
 `
 
