@@ -34,9 +34,14 @@ export class MailSimple {
     var table = sheet.getDataRange().getValues();
     // 結果を表示
     Logger.log(table);
+    let length = 0;
     table.forEach((userdata)=>{
-      Logger.log(userdata)
+      if(userdata[0]){
+        length++;
+        Logger.log(userdata)
+      }
     })
+    Logger.log(length)
     return table;
   }
 
@@ -51,7 +56,7 @@ export class MailSimple {
   createMailDraft(userEmail, shoolName, userName) {
 
     const content = this.createMailContent(shoolName, userName)
-    const title = "対面英語ディベート大会@渋谷のご案内 (2023/1/21：経験者 1/22: 初心者）"
+    const title = "2023年前半の英語ディベートイベントについて"
 
     this.createMailDraftExecute(userEmail, title, content )
   }
@@ -60,44 +65,32 @@ export class MailSimple {
   createMailContent(shoolName, userName ){
     return `${shoolName} ${userName}様
 
-    英語ディベートの大会などで以前お世話になったかたがたに
-    メールさせていただいております。
-    久しぶりに対面での英語ディベート大会を開催させていただこうと思っております。
-    
-    ＜場所＞
-    　青山学院　(東京都 渋谷駅 徒歩１０分)
-    
-    ＜日時＞
-    1月21日 (土曜): 経験者大会(中高対象)
-    1月22日 (日曜): 初心者大会(小中対象)
-    1月22日 (日曜): 哲学対話(小学生低学年から対象)
-    
-    
-    
-    ＜詳細＞
-    https://docs.google.com/document/d/1XAYwbkQDweU16oHW3LlvrEitobZA8I_DtVkmVNLm3nU/edit?usp=sharing
-    
-    <コンセプト>.
-     - 経験者大会と初心者大会と分けることで、レベルにあわせた参加ができる
-     - 学校などからの参加は何チームでも大丈夫。はじめての大会の人にも安心できる。
-     - 対面で楽しむことができ、事前の練習会などでも交流を深める機会を増やす。
-    
-    
-    実施内容が問題で参加ができない方などがいらっしゃいましたら調節させていただく予定ですので、
-    メッセージをいただけると幸いです。
-    
-    
-    大会の他に、誰でも参加できるオンライン練習会も無料で開催しています。
-    https://line.me/ti/g2/s7hPzfvcT8QQFHWQ9wm4J5SmOtLbSGmU5d-aYg
-    こちらもご参加いただけると嬉しいです。
-    
-    また、別件ですが、2023年02月18日(土)        2023年02月19日(日)　にオンラインの大会も企画しております。
-    詳細が決まりしだいまたご連絡させていただきます
-    
-    
-    何卒よろしくお願いいたします。
-    
-    大会運営者一同`
+英語ディベートのイベントについて三つ連絡させてください
+
+■ 対面英語ディベート大会 ■
+2023年 1月21日　1月22日 
+東京
+https://docs.google.com/document/d/1XAYwbkQDweU16oHW3LlvrEitobZA8I_DtVkmVNLm3nU/edit
+前回お伝えしたのから三点変更があります
+ - 開始時間を１０時に変更(遠方のかたが間に合わないため)
+ - 締切の延長: なるべく早く申し込みいただきたいですが、ぎりぎりまで受付はする予定です。
+ - 哲学対話の参加を中学生も参加可能にしました
+
+
+ ■ 事前研修会について ■
+ - 三ヶ月にわたり毎週オンラインで英語ディベートを一緒に練習を行う研修会を開催します。
+ - 基礎的なことから、プレゼンと練習があります
+ https://docs.google.com/document/d/1igGm5Sy9WmkZiPkDTDdLYe9ZitnuzJ8CwHKTt58wdKM/edit
+
+ ■ オンライン route hディベート大会 ■
+ 2/18, 2/19  
+- 三回目となるroute h ディベート大会です。
+https://docs.google.com/document/d/1KOLqvLZR18Z7vvLKGU3IDcGoRDTMZvw3Q5TLqNKfYIY/edit?usp=sharing
+
+
+いずれかに興味がありましたら、申し込みいただけますと幸いです。
+
+運営者一同`
 
   }
   
