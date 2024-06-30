@@ -26,12 +26,12 @@ export class MailSimple {
     // (1)Spreadsheetファイルを開く
     const SHEET_URL =
       "https://docs.google.com/spreadsheets/d/1kkc4lrEVd-WPXryMKVvG1mxz83PG3fwACPKGHSqvrAA/edit#gid=0";
-    const SHEET_NAME = "シート3";
+    const SHEET_NAME = "送信時調節２";
     var spreadSheet = SpreadsheetApp.openByUrl(SHEET_URL);
     // (2)Sheetを開く
     var sheet = spreadSheet.getSheetByName(SHEET_NAME);
     // (3)セルの範囲を指定・(4)値の取得
-    var table = sheet.getDataRange().getValues();
+    var table = sheet.getRange('H1:J1380').getValues();
     // 結果を表示
     Logger.log(table);
     let length = 0;
@@ -56,7 +56,7 @@ export class MailSimple {
   createMailDraft(userEmail, shoolName, userName) {
 
     const content = this.createMailContent(shoolName, userName)
-    const title = "2023年前半の英語ディベートイベントについて"
+    const title = "英語ディベート大会 @Tokyo  7月14日(日)初心者 7月15日(祝) のアナウンス"
 
     this.createMailDraftExecute(userEmail, title, content )
   }
@@ -65,32 +65,34 @@ export class MailSimple {
   createMailContent(shoolName, userName ){
     return `${shoolName} ${userName}様
 
-英語ディベートのイベントについて三つ連絡させてください
+    英語ディベート大会に参加頂きたくご連絡させていただきました。
+    
+    
+    7月14日 (日曜) 小学生中学生のディベート初心者大会
+    https://docs.google.com/document/d/1V_drc29vaWnDFE6krmlmRiuNkRpvZ5afjBhZF-X5LKU/edit
+    
+    7月14日 (日曜) ：小学生英語ディスカッション
+    https://docs.google.com/document/d/1CkKpQ9ybFXZe7NqFCvwtz90q38hQbMSXRt9e2DPw8TA/edit
+    
+    7月15日  (月曜・祝日)：中高生のディベート経験者向け大会
+    https://docs.google.com/document/d/1sucGOvXZZ_1NnbIwW-Dty1RBrn_pRmPOBFgk6-chx7Y/edit
+    
 
-■ 対面英語ディベート大会 ■
-2023年 1月21日　1月22日 
-東京
-https://docs.google.com/document/d/1XAYwbkQDweU16oHW3LlvrEitobZA8I_DtVkmVNLm3nU/edit
-前回お伝えしたのから三点変更があります
- - 開始時間を１０時に変更(遠方のかたが間に合わないため)
- - 締切の延長: なるべく早く申し込みいただきたいですが、ぎりぎりまで受付はする予定です。
- - 哲学対話の参加を中学生も参加可能にしました
+    [特徴]
+    - 提供ジャッジ不要で何チームでも参加できるので、普段大会に出場できる機会が無い方でも参加できます
+    - 初心者大会は順位よりも楽しむのを重要視して運営いたします
+    - レベル分けを厳密に行うので、実力差がありすぎる相手と対戦することはありません
+    - 個人での申し込みが可能です
+    
 
-
- ■ 事前研修会について ■
- - 三ヶ月にわたり毎週オンラインで英語ディベートを一緒に練習を行う研修会を開催します。
- - 基礎的なことから、プレゼンと練習があります
- https://docs.google.com/document/d/1igGm5Sy9WmkZiPkDTDdLYe9ZitnuzJ8CwHKTt58wdKM/edit
-
- ■ オンライン route hディベート大会 ■
- 2/18, 2/19  
-- 三回目となるroute h ディベート大会です。
-https://docs.google.com/document/d/1KOLqvLZR18Z7vvLKGU3IDcGoRDTMZvw3Q5TLqNKfYIY/edit?usp=sharing
-
-
-いずれかに興味がありましたら、申し込みいただけますと幸いです。
-
-運営者一同`
+    質問はこちらのメールか
+    Line:  https://line.me/ti/p/8m97k13AO6
+    に質問いただけると嬉しいです
+  
+    
+    何卒よろしくお願いいたします
+    
+    運営一同`
 
   }
   
